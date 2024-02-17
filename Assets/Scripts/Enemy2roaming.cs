@@ -13,7 +13,7 @@ public class Enemy2roaming : MonoBehaviour
     }
  
     void nextGoal(){
-    var randomPos = new Vector3(Random.Range(0,10),Random.Range(0,5),Random.Range(0,10));
+    var randomPos = new Vector3(Random.Range(0,60),Random.Range(0,60),Random.Range(0,60));
     agent.destination = randomPos;
     }
     
@@ -21,7 +21,7 @@ public class Enemy2roaming : MonoBehaviour
     void Update()
     {
         // Debug.Log(agent.remainingDistance);
-        if(agent.remainingDistance < 1f){
+        if(agent.remainingDistance < 2f){
         nextGoal();
         }
         

@@ -51,7 +51,7 @@ public class SightCheckerExample : MonoBehaviour
     #region AI
     public NavMeshAgent Enemy2;
     public GameObject player;
-    public MonoBehaviour Enemy2roaming;//他スクリプトEnermy2roaming
+    public GameObject self;//自分自身（敵）
 
 //編集中
     #region Main
@@ -62,13 +62,17 @@ public class SightCheckerExample : MonoBehaviour
     private void Update()
     {
         var isVisible = IsVisible();
-        if(isVisible = true)
+        if(isVisible == true)
         {
-            Enermy2roaming.enabled = false;//徘徊中止
+            self.GetComponent<Enemy2roaming>().enabled = false;//徘徊中止
             if (player != null)
             {
                Enemy2.destination  = player.transform.position;
             }
+        }
+        else
+        {
+            self.GetComponent<Enemy2roaming>().enabled = true;
         }
     }
 
@@ -88,5 +92,5 @@ public class SightCheckerExample : MonoBehaviour
     #endregion
 }
 //https://nekojara.city/unity-object-sight 
-
+#endregion
 
