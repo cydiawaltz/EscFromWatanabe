@@ -13,7 +13,7 @@ public class Enemy2roaming : MonoBehaviour
     }
  
     void nextGoal(){
-    var randomPos = new Vector3(Random.Range(0,60),Random.Range(0,60),Random.Range(0,60));
+    var randomPos = new Vector3(Random.Range(0,100),Random.Range(0,100),Random.Range(0,100));
     agent.destination = randomPos;
     }
     
